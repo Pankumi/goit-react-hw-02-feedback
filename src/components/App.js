@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
+import { Section } from './Section/Section'
 import { Statistics } from './Statistics/Statistics.js';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions'
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Box, Buttons } from './App.styled';
 
 export class App extends Component {
@@ -33,21 +34,23 @@ export class App extends Component {
   render() {
     return (
       <Box>
-        <h2>Please leave feedback</h2>
-        <Buttons>
-          <FeedbackOptions options="good" onLeaveFeedback={this.countResponse}></FeedbackOptions>
-          <FeedbackOptions options="neutral" onLeaveFeedback={this.countResponse}></FeedbackOptions>
-          <FeedbackOptions options="bad" onLeaveFeedback={this.countResponse}></FeedbackOptions>
-        </Buttons>
+        <Section title="Please leave feedback">
+          <Buttons>
+            <FeedbackOptions options="good" onLeaveFeedback={this.countResponse}></FeedbackOptions>
+            <FeedbackOptions options="neutral" onLeaveFeedback={this.countResponse}></FeedbackOptions>
+            <FeedbackOptions options="bad" onLeaveFeedback={this.countResponse}></FeedbackOptions>
+          </Buttons>
+        </Section>
 
-        <h2>Statistics</h2>
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback(this.state)}
-          positivePercentage={this.countPositiveFeedbackPercentage(this.state)}
-        ></Statistics>
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback(this.state)}
+            positivePercentage={this.countPositiveFeedbackPercentage(this.state)}>
+          </Statistics>
+        </Section>
       </Box>
     );
   }
