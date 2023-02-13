@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Section } from './Section/Section';
-import { Statistics } from './Statistics/Statistics.js';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Statistics } from './Statistics/Statistics.js';
 import { Notification } from './Notification/Notification';
 import { Box, Buttons } from './App.styled';
 
@@ -41,15 +41,7 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <Buttons>
             <FeedbackOptions
-              options="good"
-              onLeaveFeedback={this.countResponse}
-            ></FeedbackOptions>
-            <FeedbackOptions
-              options="neutral"
-              onLeaveFeedback={this.countResponse}
-            ></FeedbackOptions>
-            <FeedbackOptions
-              options="bad"
+              options={['good', 'neutral', 'bad']}
               onLeaveFeedback={this.countResponse}
             ></FeedbackOptions>
           </Buttons>
