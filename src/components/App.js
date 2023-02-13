@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Section } from './Section/Section';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
-import { Statistics } from './Statistics/Statistics.js';
-import { Notification } from './Notification/Notification';
-import { Box, Buttons } from './App.styled';
+import React, { Component } from "react";
+import { Section } from "./Section/Section";
+import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
+import { Statistics } from "./Statistics/Statistics.js";
+import { Notification } from "./Notification/Notification";
+import { Box, Buttons } from "./App.styled";
 
 export class App extends Component {
   // стани при завантаженні
@@ -41,7 +41,7 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <Buttons>
             <FeedbackOptions
-              options={['good', 'neutral', 'bad']}
+              options={["good", "neutral", "bad"]}
               onLeaveFeedback={this.countResponse}
             ></FeedbackOptions>
           </Buttons>
